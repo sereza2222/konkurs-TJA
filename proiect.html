@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../static/icon.png" />
+    <title>Главная страница</title>
+</head>
+<body text = "white"
+        background="{{url_for('static', filename='R.jfif')}}">
+        <br>
+        
+        <h1><b>"Проверка ссылки на наличие вредоносного кода"</b></h1><br>
+
+<b><h1>Введите ссылку!</h1></b>
+<form method="post">
+    <textarea name="text" id="text" cols="45" rows="20"></textarea>
+    <input type="submit">
+    {% if request.args.get("pred")%}
+    <h1>{{request.args.get("pred")}}</h1>
+    {% endif%}
+   
+   
+</form>
+</body>
+</html>
